@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+
+    <title>Andrew Brase Hangman Project</title>
+</head>
+
+<body>
+
+    <div class="main">
+        <h1>Hangman - Andrew Brase</h1>
+        <h3 id="guessesremain">Guesses Remaining : <span id="guessesnum">6</span></h3>
+
+        <button id="newgame">New Game</button>
+        <h1 id="goal-word">Website</h1>
+        <button id="hint">Hint</button>
+
+        <section class="main__person">
+
+            <div class="main__head">
+                <img src="./images/head.png" id="head" class="hidden">
+            </div>
+
+            <div class="main__torso">
+                <img src="./images/arm1.png" class="left hidden" id="leftarm">
+                <img src="./images/spine.png" id="maintorso" class="hidden">
+                <img src="./images/arm2.png" class="right hidden" id="rightarm">
+            </div>
+
+            <div class="main__legs">
+                <img src="./images/leg2.png" class="left-leg hidden" id="leftleg">
+                <img src="./images/leg1.png" class="right-leg hidden" id="rightleg">
+            </div>
+
+        </section>
+
+        <div class="guess-area">
+            <input type="text" id="guess" placeholder="Enter Guess" maxlength="1">
+            <button id="submit">Submit</button>
+        </div>
+
+        <section class="wrong-guess">
+            <h1>Used Letters : <span id="wrong"></span></h1>
+        </section>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

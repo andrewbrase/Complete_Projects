@@ -1,0 +1,41 @@
+body{
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1{
+    font-size: 90%;
+}
+
+h2{
+    position: relative; top: 10px;
+    font-size: 90%;
+}
+
+table{
+    margin: auto;
+    margin-top: 60px;
+    width:300px;
+}
+
+a{
+    margin-top: 60px;
+}
+
+td{
+    background-color: #d4d4d4;
+    width: 30%;
+    height: 30%;
+}
+
+.grayout{
+    background-color: rgb(0, 0, 0);
+}
+
+#reset{
+    position: relative; top: 25px;
+    display: inline;
+    padding: 7px;
+    border: 2px solid black;
+
+}
