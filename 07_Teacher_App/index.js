@@ -1,13 +1,5 @@
 "use strict";
 
-/*
-Bugs
-
-- if two students have the same first name and then you try to add them to a classroom, they disapear
-- Unassign student needs to be set back into unassigned secition from classrooms if they are <- unassigned
-
-*/
-
 const newStudentButton = document.getElementById('new-student-button');
 const view = document.getElementById('view');
 const modal = document.getElementById('modal');
@@ -17,7 +9,7 @@ const unassignedStudents = document.getElementById('unassigned-students');
 const firstClass = document.getElementById('first-class');
 const newClassButton = document.getElementById('new-class-button');
 
-// this ratio is used for different classroom setups, it defines the max number of kids in that class following legal guidelines 
+// this ratio is used for different classroom setups, it defines the max number of students in that class following legal guidelines 
 const maxdcfsRatio = {Nursery: 8, Toddlers: 10, Twos: 8, Threes: 10, PreSchool: 12};
 
 // empty map will be used to hold all of the student key value pairs
@@ -32,15 +24,15 @@ const toggleModal = () => {
     modal.classList.toggle('hidden');
 }
 
-// updates the classRoster through a map object, assigns button to their tag as well
+// updates the classRoster through a map object, assigns delete (x) & assign-> button to their tag as well
 const updateRoster = (firstname, newlast, newage) => {
     rosterMap.set(firstname, {lastname : newlast, age :newage});
 
     let student = rosterMap.get(firstname);
 
     // add student to roster
-    let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button> <button id="${firstname}student-delete-button">X</button></p>`
-    unassignedStudents.insertAdjacentHTML('beforeend', studentTest);
+    let newstudent = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button> <button id="${firstname}student-delete-button">X</button></p>`
+    unassignedStudents.insertAdjacentHTML('beforeend', newstudent);
 
     // student remove button
     let studentDeleteButton = document.getElementById(`${firstname}student-delete-button`);
@@ -98,7 +90,6 @@ const updateRoster = (firstname, newlast, newage) => {
                 <p id="P${firstname}">${firstname} ${newlast} age: ${newage} <button id="B${firstname}"><- Unassign</button> <button id="exit-button">X</button></p>
                 `
 
-                // need to remove that student from unassigned students
                 let removedStudent = document.getElementById(`P${firstname}`);
                 removedStudent.remove();
 
@@ -145,6 +136,7 @@ const newClassCreate = (teacher, classtype) => {
     
 }
 
+// this will update the modal to be able to create a new class
 const newClassHandler = () => {
     toggleModal();
     modalText.innerHTML = 
@@ -187,6 +179,7 @@ const newClassHandler = () => {
     })
 }
 
+// this is the contents that will be set when the modal is opened to create a new student
 const addStudentRoster = () => {
     toggleModal();
     modalText.innerHTML = 
