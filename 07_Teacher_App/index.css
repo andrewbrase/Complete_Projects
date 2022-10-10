@@ -1,0 +1,133 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.main .unassigned-students {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 400px;
+  width: 400px;
+}
+.main .unassigned-students p {
+  background-color: rgb(230, 118, 118);
+  padding: 5px;
+  border-radius: 15px;
+}
+.main .unassigned-students p button {
+  margin-left: 5px;
+  margin-right: 5px;
+  float: right;
+  border-style: none;
+  border-radius: 15px;
+}
+.main .unassigned-students p button:hover {
+  background-color: rgb(203, 203, 203);
+}
+.main .new-class {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 400px;
+  width: 400px;
+}
+.main .new-class p {
+  background-color: rgb(150, 230, 118);
+  padding: 5px;
+  border-radius: 15px;
+}
+.main .new-class p button {
+  margin-left: 5px;
+  margin-right: 5px;
+  float: right;
+  border-style: none;
+  border-radius: 15px;
+}
+.main .new-class .max-size {
+  background-color: rgb(230, 118, 118);
+}
+.main section {
+  padding: 10px;
+  width: 50%;
+  border-radius: 15px;
+  background-color: rgb(219, 219, 219);
+  height: fit-content;
+}
+.main section .new-student-button {
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-style: none;
+  border-radius: 15px;
+  background-color: rgb(184, 184, 184);
+}
+.main section .new-student-button:hover {
+  background-color: rgb(158, 158, 158);
+}
+.main .new-classroom {
+  height: 400px;
+  width: 400px;
+  text-align: center;
+}
+.main .new-classroom button {
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  border-radius: 50%;
+  border-style: none;
+}
+.main .new-classroom button:hover {
+  background-color: rgb(187, 187, 187);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: rgb(219, 219, 219);
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 10;
+}
+.modal .close-modal-button {
+  float: right;
+}
+.modal .modal-text {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 500px;
+}
+.modal .modal-text .teacher-option {
+  background-color: rgb(194, 194, 194);
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 15px;
+}
+.modal .modal-text .teacher-option button {
+  margin-left: 10px;
+  padding: 5px;
+  border-style: none;
+  border-radius: 15px;
+}
+.modal .modal-text .teacher-option button:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+/*# sourceMappingURL=index.css.map */
