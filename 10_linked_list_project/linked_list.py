@@ -88,41 +88,92 @@ class LinkedList:
         '''prints off all nodes in linked list'''
         current_node = self.head
 
-        while current_node is not None:
+        while current_node is not None: # loop through nodes and print data
             print(current_node.data)
             current_node = current_node.next
 
-# create linked list obj
-my_linked = LinkedList()
+# # create linked list obj
+# my_linked = LinkedList()
 
-print(my_linked.delete('start w/ no data'))
-# --> no data in linked list to remove
+# print(my_linked.delete('start w/ no data'))
+# # --> no data in linked list to remove
 
-my_linked.add_node('test delete')
-print(my_linked.delete('test delete'))
-# test delete deleted from beginning of linked list
+# my_linked.add_node('test delete')
+# print(my_linked.delete('test delete'))
+# # test delete deleted from beginning of linked list
 
-# testing add node method
-my_linked.add_node('A')
-my_linked.add_node('B')
-my_linked.add_node('C')
-print(my_linked.add_node('D'))
-# --> D has been added to linked list
+# # testing add node method
+# my_linked.add_node('A')
+# my_linked.add_node('B')
+# my_linked.add_node('C')
+# print(my_linked.add_node('D'))
+# # --> D has been added to linked list
 
-# testing prepend and delete method
-print(my_linked.prepend('first'))
-my_linked.delete('first')
+# # testing prepend and delete method
+# print(my_linked.prepend('first'))
+# my_linked.delete('first')
 
-# creating a method to insert data after a specific node pointer
-my_linked.insert('D','E')
-print(my_linked.insert('E','F'))
+# # creating a method to insert data after a specific node pointer
+# my_linked.insert('D','E')
+# print(my_linked.insert('E','F'))
 
-# if value entered to insert after not in list
-print(my_linked.insert('Andrew','G'))
-# --> Could not find Andrew in Linked List
+# # if value entered to insert after not in list
+# print(my_linked.insert('Andrew','G'))
+# # --> Could not find Andrew in Linked List
 
-print(my_linked.delete('F'))
-# --> F deleted from linked list
+# print(my_linked.delete('F'))
+# # --> F deleted from linked list
 
-my_linked.print_all()
-#  --> A B C D E 
+# my_linked.print_all()
+# #  --> A B C D E 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Find the middle of a given linked list
+
+class FindMiddle(LinkedList):
+    def find_middle(self):
+
+        length = 0
+        current_node = self.head
+
+        while current_node:
+            length += 1
+            current_node = current_node.next
+
+        if length % 2 == 0:
+            middle = length // 2
+            current_node = self.head
+            for i in range(middle-1):
+                current_node = current_node.next
+            return current_node.data, current_node.next.data
+
+        else:
+            slow = self.head
+            fast = self.head
+
+            while fast and fast.next:
+                slow = slow.next
+                fast = fast.next.next
+            return slow.data
+
+# middle = FindMiddle()
+# for x in range(1,6):
+#     middle.add_node(x)
+
+# middle.add_node(6)
+
+# middle.print_all()
+# print(middle.find_middle())
+
+even_list = FindMiddle()
+for x in range(1,7):
+    even_list.add_node(x)
+
+uneven_list = FindMiddle()
+for x in range(1,6):
+    uneven_list.add_node(x)
+
+print(even_list.find_middle())
+# (3, 4)
+print(uneven_list.find_middle())
+# 3
