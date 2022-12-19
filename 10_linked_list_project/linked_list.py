@@ -84,6 +84,14 @@ class LinkedList:
             current_node = current_node.next # iterates through nodes 
         return f'Could not find {prev_value} in Linked List'
 
+    def print_all(self):
+        '''prints off all nodes in linked list'''
+        current_node = self.head
+
+        while current_node is not None:
+            print(current_node.data)
+            current_node = current_node.next
+
 # create linked list obj
 my_linked = LinkedList()
 
@@ -113,5 +121,8 @@ print(my_linked.insert('E','F'))
 print(my_linked.insert('Andrew','G'))
 # --> Could not find Andrew in Linked List
 
-print(my_linked.delete('D'))
-# --> D deleted from linked list
+print(my_linked.delete('F'))
+# --> F deleted from linked list
+
+my_linked.print_all()
+#  --> A B C D E 
