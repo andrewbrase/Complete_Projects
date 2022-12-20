@@ -92,6 +92,13 @@ class LinkedList:
             print(current_node.data)
             current_node = current_node.next
 
+my_new_linked_list = LinkedList()
+for x in range (1,11):
+    my_new_linked_list.add_node(x)
+
+my_new_linked_list.insert(5,'after 5')
+my_new_linked_list.print_all()
+
 # # create linked list obj
 # my_linked = LinkedList()
 
@@ -165,15 +172,15 @@ class FindMiddle(LinkedList):
 # middle.print_all()
 # print(middle.find_middle())
 
-even_list = FindMiddle()
-for x in range(1,7):
-    even_list.add_node(x)
+# even_list = FindMiddle()
+# for x in range(1,7):
+#     even_list.add_node(x)
 
-uneven_list = FindMiddle()
-for x in range(1,6):
-    uneven_list.add_node(x)
+# uneven_list = FindMiddle()
+# for x in range(1,6):
+#     uneven_list.add_node(x)
 
-print(even_list.find_middle())
+# print(even_list.find_middle())
 # (3, 4)
-print(uneven_list.find_middle())
+# print(uneven_list.find_middle())
 # 3
